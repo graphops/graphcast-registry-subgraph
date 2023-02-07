@@ -1,0 +1,30 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: GraphcastRegistry
+    network: goerli
+    source:
+      address: "0x79d0245068C27A0e05dDD9d62DFCb2f888429049"
+      abi: GraphcastRegistry
+      startBlock: 8374796
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - AdminChange
+        - Initialized
+        - SetGossipOperator
+      abis:
+        - name: GraphcastRegistry
+          file: ./abis/GraphcastRegistry.json
+      eventHandlers:
+        - event: AdminChange(address)
+          handler: handleAdminChange
+        - event: Initialized(uint8)
+          handler: handleInitialized
+        - event: SetGossipOperator(indexed address,indexed address)
+          handler: handleSetGossipOperator
+      file: ./src/graphcast-registry.ts

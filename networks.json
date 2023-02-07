@@ -1,0 +1,8 @@
+{
+  "goerli": {
+    "GraphcastRegistry": {
+      "address": "0x79d0245068C27A0e05dDD9d62DFCb2f888429049",
+      "startBlock": 8374796
+    }
+  }
+}

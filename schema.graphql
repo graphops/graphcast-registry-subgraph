@@ -1,0 +1,24 @@
+type AdminChange @entity(immutable: true) {
+  id: Bytes!
+  admin: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Initialized @entity(immutable: true) {
+  id: Bytes!
+  version: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetGossipOperator @entity(immutable: true) {
+  id: Bytes!
+  indexer: Bytes! # address
+  operator: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
