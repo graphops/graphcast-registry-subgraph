@@ -22,3 +22,36 @@ type SetGossipOperator @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+
+type ServiceRegistered @entity(immutable: true) {
+  id: Bytes!
+  indexer: Bytes! # address
+  url: String! # string
+  geohash: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ServiceUnregistered @entity(immutable: true) {
+  id: Bytes!
+  indexer: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Indexer @entity {
+  id: Bytes!
+  url: String! # string
+  geohash: String! # string
+  registeredAtBlock: BigInt!
+  registeredAtTimestamp: BigInt!
+  registeredAtTransaction: Bytes!
+  active: Boolean!
+  unregisteredAtBlock: BigInt
+  unregisteredAtTimestamp: BigInt
+  unregisteredAtTransaction: Bytes
+  "Operator address might not exist if never set"
+  operator: Bytes
+}

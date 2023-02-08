@@ -6,7 +6,8 @@ import {
 import {
   AdminChange,
   Initialized,
-  SetGossipOperator
+  SetGossipOperator,
+  Indexer
 } from "../generated/schema"
 
 export function handleAdminChange(event: AdminChangeEvent): void {
@@ -47,4 +48,8 @@ export function handleSetGossipOperator(event: SetGossipOperatorEvent): void {
   entity.transactionHash = event.transaction.hash
 
   entity.save()
+
+  let indexer = Indexer.load(event.params.indexer)!
+  indexer.operator = event.params.operator;
+  indexer.save()
 }

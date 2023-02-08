@@ -6,7 +6,7 @@ dataSources:
     name: GraphcastRegistry
     network: goerli
     source:
-      address: "0x79d0245068C27A0e05dDD9d62DFCb2f888429049"
+      address: "0xBFdA8191D1ec09bB8ADc138DAbf413d00DAfb6c8"
       abi: GraphcastRegistry
       startBlock: 8374796
     mapping:
@@ -28,3 +28,29 @@ dataSources:
         - event: SetGossipOperator(indexed address,indexed address)
           handler: handleSetGossipOperator
       file: ./src/graphcast-registry.ts
+  - kind: ethereum
+    name: ServiceRegistry
+    network: goerli
+    source:
+      address: "0x7CF8aD279E9F26b7DAD2Be452A74068536C8231F"
+      abi: ServiceRegistry
+      startBlock: 7224883
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ContractSynced
+        - ParameterUpdated
+        - ServiceRegistered
+        - ServiceUnregistered
+        - SetController
+      abis:
+        - name: ServiceRegistry
+          file: ./abis/ServiceRegistry.json
+      eventHandlers:
+        - event: ServiceRegistered(indexed address,string,string)
+          handler: handleServiceRegistered
+        - event: ServiceUnregistered(indexed address)
+          handler: handleServiceUnregistered
+      file: ./src/service-registry.ts
