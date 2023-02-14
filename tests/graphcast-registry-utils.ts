@@ -1,21 +1,22 @@
 import { newMockEvent } from "matchstick-as"
 import { ethereum, Address } from "@graphprotocol/graph-ts"
 import {
-  AdminChange,
+  OwnershipTransferred,
   Initialized,
-  SetGossipOperator
+  SetGraphcastID
 } from "../generated/GraphcastRegistry/GraphcastRegistry"
 
-export function createAdminChangeEvent(admin: Address): AdminChange {
-  let adminChangeEvent = changetype<AdminChange>(newMockEvent())
+export function createOwnershipTransferredEvent(previsouOwner: Address, newOwner: Address): OwnershipTransferred {
+  let ownershipTransferredEvent = changetype<OwnershipTransferred>(newMockEvent())
 
-  adminChangeEvent.parameters = new Array()
+  ownershipTransferredEvent.parameters = new Array()
 
-  adminChangeEvent.parameters.push(
-    new ethereum.EventParam("admin", ethereum.Value.fromAddress(admin))
+  ownershipTransferredEvent.parameters.push(
+    new ethereum.EventParam("previousOwner", ethereum.Value.fromAddress(previsouOwner)),
+    new ethereum.EventParam("newOwner", ethereum.Value.fromAddress(newOwner))
   )
 
-  return adminChangeEvent
+  return ownershipTransferredEvent
 }
 
 export function createInitializedEvent(version: i32): Initialized {
@@ -33,20 +34,20 @@ export function createInitializedEvent(version: i32): Initialized {
   return initializedEvent
 }
 
-export function createSetGossipOperatorEvent(
+export function createSetGraphcastIDEvent(
   indexer: Address,
-  operator: Address
-): SetGossipOperator {
-  let setGossipOperatorEvent = changetype<SetGossipOperator>(newMockEvent())
+  graphcastID: Address
+): SetGraphcastID {
+  let setGraphcastIDEvent = changetype<SetGraphcastID>(newMockEvent())
 
-  setGossipOperatorEvent.parameters = new Array()
+  setGraphcastIDEvent.parameters = new Array()
 
-  setGossipOperatorEvent.parameters.push(
+  setGraphcastIDEvent.parameters.push(
     new ethereum.EventParam("indexer", ethereum.Value.fromAddress(indexer))
   )
-  setGossipOperatorEvent.parameters.push(
-    new ethereum.EventParam("operator", ethereum.Value.fromAddress(operator))
+  setGraphcastIDEvent.parameters.push(
+    new ethereum.EventParam("graphcastID", ethereum.Value.fromAddress(graphcastID))
   )
 
-  return setGossipOperatorEvent
+  return setGraphcastIDEvent
 }

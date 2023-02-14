@@ -1,6 +1,6 @@
-type AdminChange @entity(immutable: true) {
+type OwnershipTransferred @entity(immutable: true) {
   id: Bytes!
-  admin: Bytes! # address
+  owner: Bytes! # address
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
@@ -14,10 +14,10 @@ type Initialized @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
-type SetGossipOperator @entity(immutable: true) {
+type SetGraphcastID @entity(immutable: true) {
   id: Bytes!
   indexer: Bytes! # address
-  operator: Bytes! # address
+  graphcastID: Bytes! # address
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
@@ -52,6 +52,6 @@ type Indexer @entity {
   unregisteredAtBlock: BigInt
   unregisteredAtTimestamp: BigInt
   unregisteredAtTransaction: Bytes
-  "Operator address might not exist if never set"
-  operator: Bytes
+  "GraphcastID address might not exist if never set"
+  graphcastID: Bytes
 }

@@ -1,20 +1,20 @@
 import {
-  AdminChange as AdminChangeEvent,
+  OwnershipTransferred as OwnershipTransferredEvent,
   Initialized as InitializedEvent,
-  SetGossipOperator as SetGossipOperatorEvent
+  SetGraphcastID as SetGraphcastIDEvent
 } from "../generated/GraphcastRegistry/GraphcastRegistry"
 import {
-  AdminChange,
+  OwnershipTransferred,
   Initialized,
-  SetGossipOperator,
+  SetGraphcastID,
   Indexer
 } from "../generated/schema"
 
-export function handleAdminChange(event: AdminChangeEvent): void {
-  let entity = new AdminChange(
+export function handleOwnershipTransferred(event: OwnershipTransferredEvent): void {
+  let entity = new OwnershipTransferred(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
-  entity.admin = event.params.admin
+  entity.owner = event.params.newOwner
 
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
@@ -36,12 +36,12 @@ export function handleInitialized(event: InitializedEvent): void {
   entity.save()
 }
 
-export function handleSetGossipOperator(event: SetGossipOperatorEvent): void {
-  let entity = new SetGossipOperator(
+export function handleSetGraphcastID(event: SetGraphcastIDEvent): void {
+  let entity = new SetGraphcastID(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity.indexer = event.params.indexer
-  entity.operator = event.params.operator
+  entity.graphcastID = event.params.graphcastID
 
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
@@ -50,6 +50,6 @@ export function handleSetGossipOperator(event: SetGossipOperatorEvent): void {
   entity.save()
 
   let indexer = Indexer.load(event.params.indexer)!
-  indexer.operator = event.params.operator;
+  indexer.graphcastID = event.params.graphcastID;
   indexer.save()
 }

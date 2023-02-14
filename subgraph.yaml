@@ -6,27 +6,27 @@ dataSources:
     name: GraphcastRegistry
     network: goerli
     source:
-      address: "0xBFdA8191D1ec09bB8ADc138DAbf413d00DAfb6c8"
+      address: "0xe88461436D30CAc2d69b70871EC2cdDC32083aed"
       abi: GraphcastRegistry
-      startBlock: 8374796
+      startBlock: 8490581
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
-        - AdminChange
+        - OwnershipTransferred
         - Initialized
-        - SetGossipOperator
+        - SetGraphcastID
       abis:
         - name: GraphcastRegistry
           file: ./abis/GraphcastRegistry.json
       eventHandlers:
-        - event: AdminChange(address)
-          handler: handleAdminChange
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
         - event: Initialized(uint8)
           handler: handleInitialized
-        - event: SetGossipOperator(indexed address,indexed address)
-          handler: handleSetGossipOperator
+        - event: SetGraphcastID(indexed address,indexed address)
+          handler: handleSetGraphcastID
       file: ./src/graphcast-registry.ts
   - kind: ethereum
     name: ServiceRegistry
