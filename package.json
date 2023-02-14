@@ -8,13 +8,22 @@
     "create-local": "graph create --node http://localhost:8020/ juanmardefago/graphcast-registry",
     "remove-local": "graph remove --node http://localhost:8020/ juanmardefago/graphcast-registry",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 juanmardefago/graphcast-registry",
-    "test": "graph test"
+    "test": "graph test",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@commitlint/cli": "^17.4.3",
+    "@commitlint/config-conventional": "^17.4.3",
     "@graphprotocol/graph-cli": "^0.38.0",
     "@graphprotocol/graph-ts": "0.29.1"
   },
   "devDependencies": {
-    "matchstick-as": "^0.5.0"
+    "husky": "^8.0.0",
+    "matchstick-as": "^0.5.0",
+    "standard-version": "^9.5.0"
   }
 }
