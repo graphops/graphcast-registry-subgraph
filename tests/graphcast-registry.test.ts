@@ -17,9 +17,8 @@ import { createOwnershipTransferredEvent } from "./graphcast-registry-utils"
 
 describe("Describe entity assertions", () => {
   beforeAll(() => {
-    let previousOwner = Address.fromString("0x000000000000000000000000000000000000000a")
     let owner = Address.fromString("0x0000000000000000000000000000000000000001")
-    let newOwnershipTransferredEvent = createOwnershipTransferredEvent(previousOwner, owner)
+    let newOwnershipTransferredEvent = createOwnershipTransferredEvent(owner)
     handleOwnershipTransferred(newOwnershipTransferredEvent)
   })
 

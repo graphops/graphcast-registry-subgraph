@@ -103,7 +103,7 @@
         "type": "address"
       }
     ],
-    "name": "StakingChanged",
+    "name": "SetStaking",
     "type": "event"
   },
   {
@@ -217,7 +217,7 @@
   },
   {
     "inputs": [],
-    "name": "staking_addr",
+    "name": "stakingAddr",
     "outputs": [
       {
         "internalType": "address",
