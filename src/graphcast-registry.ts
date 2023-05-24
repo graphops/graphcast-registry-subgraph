@@ -29,7 +29,6 @@ export function handleSetStaking(event: SetStakingEvent): void {
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity.address = event.params.staking
-
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
   entity.transactionHash = event.transaction.hash
