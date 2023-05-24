@@ -9,6 +9,7 @@ Graphcast is a decentralized, distributed peer-to-peer (P2P) communication tool 
 To see the full idea behind Graphcast, you can check out the [GRC](https://forum.thegraph.com/t/grc-001-graphcast-a-gossip-network-for-indexers/3544/8) for it.
 
 Test deployment on goerli [API](https://api.thegraph.com/subgraphs/name/hopeyen/graphcast-registry-goerli)
+Test deployment on Arbitrum-goerli [API](https://api.thegraph.com/subgraphs/name/hopeyen/graphcast-registry-arbitrum-go)
 
 ## Features
 

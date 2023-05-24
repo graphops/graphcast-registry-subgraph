@@ -47,12 +47,15 @@ export function handleServiceUnregistered(
   entity.blockTimestamp = event.block.timestamp
   entity.transactionHash = event.transaction.hash
 
-  let indexer = Indexer.load(event.params.indexer)!
-  indexer.unregisteredAtBlock = entity.blockNumber
-  indexer.unregisteredAtTimestamp = entity.blockTimestamp
-  indexer.unregisteredAtTransaction = entity.transactionHash
-  indexer.active = false
+  let indexer = Indexer.load(event.params.indexer)
+  if (indexer) {
+    indexer.unregisteredAtBlock = entity.blockNumber
+    indexer.unregisteredAtTimestamp = entity.blockTimestamp
+    indexer.unregisteredAtTransaction = entity.transactionHash
+    indexer.active = false
+    
+    indexer.save()
+  }
 
-  indexer.save()
   entity.save()
 }
