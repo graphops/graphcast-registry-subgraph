@@ -1,12 +1,35 @@
 {
   "goerli": {
+    "network": "goerli",
     "GraphcastRegistry": {
-      "address": "0x12948C9cd54D952B9F07f4c65A7a43bc893D64a3",
-      "startBlock": 8580099
+      "address": "0x26ebbA649FAa7b56FDB8DE9Ea17aF3504B76BFA0",
+      "startBlock": 8608176
     },
     "ServiceRegistry": {
       "address": "0x7CF8aD279E9F26b7DAD2Be452A74068536C8231F",
       "startBlock": 7224883
+    }
+  },
+  "arbitrum-goerli": {
+    "network": "arbitrum-goerli",
+    "GraphcastRegistry": {
+      "address": "0x50C2D70A41ECEfe4CC54a331457Ea204Ecf97292",
+      "startBlock": 21535005
+    },
+    "ServiceRegistry": {
+      "address": "0x07ECDD4278D83Cd2425cA86256634f666b659e53",
+      "startBlock": 9056159
+    }
+  },
+  "mainnet": {
+    "network": "mainnet",
+    "GraphcastRegistry": {
+      "address": "0x89f97698D6006F25570Cd2e31737D3D22AEDCBCF",
+      "startBlock": 16743682
+    },
+    "ServiceRegistry": {
+      "address": "0xaD0C9DaCf1e515615b0581c8D7E295E296Ec26E6",
+      "startBlock": 11446772
     }
   }
 }

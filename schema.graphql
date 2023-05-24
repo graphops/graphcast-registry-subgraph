@@ -6,7 +6,7 @@ type OwnershipTransferred @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
-type StakingChanged @entity(immutable: true) {
+type SetStaking @entity(immutable: true) {
   id: Bytes!
   address: Bytes! # address
   blockNumber: BigInt!

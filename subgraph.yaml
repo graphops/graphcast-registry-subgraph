@@ -6,16 +6,16 @@ dataSources:
     name: GraphcastRegistry
     network: goerli
     source:
-      address: "0x12948C9cd54D952B9F07f4c65A7a43bc893D64a3"
       abi: GraphcastRegistry
-      startBlock: 8490581
+      address: "0x50C2D70A41ECEfe4CC54a331457Ea204Ecf97292"
+      startBlock: 21535005
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
         - OwnershipTransferred
-        - StakingChanged
+        - SetStaking
         - Initialized
         - SetGraphcastID
       abis:
@@ -24,8 +24,8 @@ dataSources:
       eventHandlers:
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
-        - event: StakingChanged(indexed address)
-          handler: handleStakingChanged
+        - event: SetStaking(indexed address)
+          handler: handleSetStaking
         - event: Initialized(uint8)
           handler: handleInitialized
         - event: SetGraphcastID(indexed address,indexed address)
@@ -35,9 +35,9 @@ dataSources:
     name: ServiceRegistry
     network: goerli
     source:
-      address: "0x7CF8aD279E9F26b7DAD2Be452A74068536C8231F"
       abi: ServiceRegistry
-      startBlock: 7224883
+      address: "0x07ECDD4278D83Cd2425cA86256634f666b659e53"
+      startBlock: 9056159
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
