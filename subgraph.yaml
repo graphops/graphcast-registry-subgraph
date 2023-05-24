@@ -6,7 +6,7 @@ dataSources:
     name: GraphcastRegistry
     network: goerli
     source:
-      address: "0xe88461436D30CAc2d69b70871EC2cdDC32083aed"
+      address: "0x12948C9cd54D952B9F07f4c65A7a43bc893D64a3"
       abi: GraphcastRegistry
       startBlock: 8490581
     mapping:
@@ -15,6 +15,7 @@ dataSources:
       language: wasm/assemblyscript
       entities:
         - OwnershipTransferred
+        - StakingChanged
         - Initialized
         - SetGraphcastID
       abis:
@@ -23,6 +24,8 @@ dataSources:
       eventHandlers:
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
+        - event: StakingChanged(indexed address)
+          handler: handleStakingChanged
         - event: Initialized(uint8)
           handler: handleInitialized
         - event: SetGraphcastID(indexed address,indexed address)

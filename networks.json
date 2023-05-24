@@ -1,8 +1,8 @@
 {
   "goerli": {
     "GraphcastRegistry": {
-      "address": "0xe88461436D30CAc2d69b70871EC2cdDC32083aed",
-      "startBlock": 8490581
+      "address": "0x12948C9cd54D952B9F07f4c65A7a43bc893D64a3",
+      "startBlock": 8580099
     },
     "ServiceRegistry": {
       "address": "0x7CF8aD279E9F26b7DAD2Be452A74068536C8231F",

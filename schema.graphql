@@ -6,6 +6,14 @@ type OwnershipTransferred @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
+type StakingChanged @entity(immutable: true) {
+  id: Bytes!
+  address: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
 type Initialized @entity(immutable: true) {
   id: Bytes!
   version: Int! # uint8

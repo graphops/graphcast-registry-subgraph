@@ -1,10 +1,12 @@
 import {
   OwnershipTransferred as OwnershipTransferredEvent,
+  StakingChanged as StakingChangedEvent,
   Initialized as InitializedEvent,
   SetGraphcastID as SetGraphcastIDEvent
 } from "../generated/GraphcastRegistry/GraphcastRegistry"
 import {
   OwnershipTransferred,
+  StakingChanged,
   Initialized,
   SetGraphcastID,
   Indexer
@@ -15,6 +17,19 @@ export function handleOwnershipTransferred(event: OwnershipTransferredEvent): vo
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity.owner = event.params.newOwner
+
+  entity.blockNumber = event.block.number
+  entity.blockTimestamp = event.block.timestamp
+  entity.transactionHash = event.transaction.hash
+
+  entity.save()
+}
+
+export function handleStakingChanged(event: StakingChangedEvent): void {
+  let entity = new StakingChanged(
+    event.transaction.hash.concatI32(event.logIndex.toI32())
+  )
+  entity.address = event.params.staking
 
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
