@@ -2,6 +2,7 @@ import { newMockEvent } from "matchstick-as"
 import { ethereum, Address } from "@graphprotocol/graph-ts"
 import {
   OwnershipTransferred,
+  StakingChanged,
   Initialized,
   SetGraphcastID
 } from "../generated/GraphcastRegistry/GraphcastRegistry"
@@ -17,6 +18,18 @@ export function createOwnershipTransferredEvent(previsouOwner: Address, newOwner
   )
 
   return ownershipTransferredEvent
+}
+
+export function createStakingChangedEvent(address: Address): StakingChanged {
+  let stakingChangedEvent = changetype<StakingChanged>(newMockEvent())
+
+  stakingChangedEvent.parameters = new Array()
+
+  stakingChangedEvent.parameters.push(
+    new ethereum.EventParam("address", ethereum.Value.fromAddress(address)),
+  )
+
+  return stakingChangedEvent
 }
 
 export function createInitializedEvent(version: i32): Initialized {
