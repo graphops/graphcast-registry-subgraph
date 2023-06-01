@@ -8,8 +8,14 @@ Graphcast is a decentralized, distributed peer-to-peer (P2P) communication tool 
 
 To see the full idea behind Graphcast, you can check out the [GRC](https://forum.thegraph.com/t/grc-001-graphcast-a-gossip-network-for-indexers/3544/8) for it.
 
-Test deployment on goerli [API](https://api.thegraph.com/subgraphs/name/hopeyen/graphcast-registry-goerli)
-Test deployment on Arbitrum-goerli [API](https://api.thegraph.com/subgraphs/name/hopeyen/graphcast-registry-arbitrum-go)
+### Endpoints
+
+| Network         | Registry Contract                                           | Subgraph Playground                                             | Subgraph API                                                  |
+| --------------- | ----------------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------- |
+| Ethereum-mainnet   | [0x89f97698d6006f25570cd2e31737d3d22aedcbcf](https://etherscan.io/address/0x89f97698d6006f25570cd2e31737d3d22aedcbcf) | [Link](https://thegraph.com/hosted-service/subgraph/hopeyen/graphcast-registry-mainnet) | [Link](https://api.thegraph.com/subgraphs/name/hopeyen/graphcast-registry-mainnet) |
+| Ethereum-goerli   | [0x26ebbA649FAa7b56FDB8DE9Ea17aF3504B76BFA0](https://goerli.etherscan.io/address/0x26ebbA649FAa7b56FDB8DE9Ea17aF3504B76BFA0) | [Link](https://thegraph.com/hosted-service/subgraph/hopeyen/graphcast-registry-goerli) | [Link](https://api.thegraph.com/subgraphs/name/hopeyen/graphcast-registry-goerli) |
+| Arbitrum-goerli   | [0x50c2d70a41ecefe4cc54a331457ea204ecf97292](https://goerli.arbiscan.io/address/0x50c2d70a41ecefe4cc54a331457ea204ecf97292) | [Link](https://thegraph.com/hosted-service/subgraph/hopeyen/graphcast-registry-arbitrum-go) | [Link](https://api.thegraph.com/subgraphs/name/hopeyen/graphcast-registry-arbitrum-go) |
+| Arbitrum-one   | [0xfae79e8cb8fbac2408e5baf89262bd92b6ca464a](https://arbiscan.io/address/0xfae79e8cb8fbac2408e5baf89262bd92b6ca464a) | [Link](https://thegraph.com/hosted-service/subgraph/hopeyen/graphcast-registry-arb-one) | [Link](https://api.thegraph.com/subgraphs/name/hopeyen/graphcast-registry-arb-one) |
 
 ## Features
 
