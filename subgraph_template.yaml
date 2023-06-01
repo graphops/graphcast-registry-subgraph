@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: GraphcastRegistry
-    network: arbitrum-one
+    network: {{network}}
     source:
       abi: GraphcastRegistry
-      address: "0xfae79e8cb8fbac2408e5baf89262bd92b6ca464a"
-      startBlock: 96424476
+      address: {{registry_address}}
+      startBlock: {{registry_block}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -33,11 +33,11 @@ dataSources:
       file: ./src/graphcast-registry.ts
   - kind: ethereum
     name: ServiceRegistry
-    network: arbitrum-one
+    network: {{network}}
     source:
       abi: ServiceRegistry
-      address: "0x07ECDD4278D83Cd2425cA86256634f666b659e53"
-      startBlock: 59513031
+      address: {{service_address}}
+      startBlock: {{service_block}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
