@@ -10,15 +10,26 @@
       "startBlock": 7224883
     }
   },
-  "arbitrum-goerli": {
-    "network": "arbitrum-goerli",
+  "arbitrum-one": {
+    "network": "arbitrum-one",
     "GraphcastRegistry": {
-      "address": "0x50C2D70A41ECEfe4CC54a331457Ea204Ecf97292",
-      "startBlock": 21535005
+      "address": "0xfae79e8cb8fbac2408e5baf89262bd92b6ca464a",
+      "startBlock": 96424476
     },
     "ServiceRegistry": {
       "address": "0x07ECDD4278D83Cd2425cA86256634f666b659e53",
-      "startBlock": 9056159
+      "startBlock": 	59513031
+    }
+  },
+  "arbitrum-sepolia": {
+    "network": "arbitrum-sepolia",
+    "GraphcastRegistry": {
+      "address": "0x17c3a072E5b1B2c260C29D289ee2E7372b8f7C69",
+      "startBlock": 9149055
+    },
+    "ServiceRegistry": {
+      "address": "0x888541878CbDDEd880Cd58c728f1Af5C47343F86",
+      "startBlock": 	570699
     }
   },
   "mainnet": {
